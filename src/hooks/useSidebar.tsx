@@ -1,0 +1,32 @@
+import { useCallback, useState } from 'react';
+
+export type SidebarState = {
+    isOpen: boolean;
+    open: () => void;
+    close: () => void;
+    toggle: () => void;
+};
+
+export const useSidebar = (): SidebarState => {
+    // by default should be opened
+    const [isOpen, setIsOpen] = useState(true);
+
+    const open = useCallback(() => {
+        setIsOpen(true);
+    }, []);
+
+    const close = useCallback(() => {
+        setIsOpen(false);
+    }, []);
+
+    const toggle = useCallback(() => {
+        setIsOpen(prev => !prev);
+    }, []);
+
+    return {
+        isOpen,
+        open,
+        close,
+        toggle,
+    };
+};
