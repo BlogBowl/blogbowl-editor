@@ -66,6 +66,7 @@ export namespace API {
         seo_description?: string;
         og_title?: string;
         og_description?: string;
+        scheduled_at?: string;
     };
 
     export type Revision = {
