@@ -67,6 +67,7 @@ export namespace API {
         og_title?: string;
         og_description?: string;
         scheduled_at?: string;
+        faq_answers?: Array<{ question: string; answer: string }>;
     };
 
     export type Revision = {
